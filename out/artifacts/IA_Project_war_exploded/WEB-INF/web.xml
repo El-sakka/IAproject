@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>SignUpCtl</servlet-name>
+        <servlet-class>com.controller.SignUpCtl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUpCtl</servlet-name>
+        <url-pattern>/SignUpCtl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogInCtl</servlet-name>
+        <servlet-class>com.controller.LogInCtl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogInCtl</servlet-name>
+        <url-pattern>/LogInCtl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LogOutCtl</servlet-name>
+        <servlet-class>com.controller.LogOutCtl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOutCtl</servlet-name>
+        <url-pattern>/LogOutCtl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddForm</servlet-name>
+        <servlet-class>com.controller.AddForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddForm</servlet-name>
+        <url-pattern>/AddForm</url-pattern>
+    </servlet-mapping>
+</web-app>
