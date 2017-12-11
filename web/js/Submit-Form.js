@@ -1,112 +1,161 @@
 function answerString( i,j){
-    return '<div class="form-group"  id="Answer'+i+'Question'+j+'"deleted="no" >'
-        +'<div class="input-group" id="Answer'+i+'">'
-        +'<input type="text" id="input'+i+'Q'+j+'" name="Answer'+i+'"class="form-control " placeholder="Enter the option" required>'
-        +'<div class="btn input-group-addon btn-danger addonRemove" >x</div>'
+    return ' <div class="form-group"  id="Answer' + i + 'Question' + j + '">'
+        + '<div class="input-group">'
+        + '<input type="text" id="A' + i + 'Q' + j + '" name="Answer' + i + 'Question' + j + '"  class="form-control" placeholder="Enter the option" >'
+        + '<div class="btn input-group-addon btn-danger RemoveAnswer" ans="' + i + '">x</div>'
         +'</div>'
-        +'</div>';
+        + '</div>'
+        ;
 }
 function questionString(i) {
-    return '  <div id="Question'+i+'" >'
-        +'<div class=" container">'
+    return '<div id="Question' + i + '" class="container">'
         +'<div class="form-group">'
-        +'<label for="Question'+i+'-text">Enter The Quesion</label>'
-        +'<input type="text" class="form-control" id="Question'+i+'-name" placeholder="Enter the Question" Required>'
+        + '<label for="Question' + i + '-text"id="lb1-' + i + '">Enter the Question </label>'
+        + '<div class="btn btn-danger btn-sm removeQuestion float-sm-right">X</div>'
+        + '<input type="text" class="form-control" name="Question' + i + '-text" id="Question' + i + '-text" placeholder="Enter the Question" required>'
         +'</div>'
-        +'<div class="form-group" >'
-        +'<label for="Quesion'+i+'-type">Select Type</label>'
-        +'<select class="form-control" id="Question'+i+'-type" quesion="'+i+'" name="Question-type" Required>'
+        + '<div class="form-group">'
+        + '<label for="Question' + i + '-type" id="lb2-' + i + '" >Select Question Type</label>'
+        + '<select class="form-control" name="Question' + i + '-type" id="Question' + i + '-type" required>'
         +'<option value="" disabled selected>Select your option</option>'
         +'<option value="MSQ">MCQ</option>'
         +'<option value="ToF">True/False</option>'
-        +'<option value="ShortAnswer">Short Answer</option>'
-        +'<option value="MC">Multiple Choices</option>'
+        + '<option value="SA">ShortAnswer</option>'
+        + '<option value="CB">Check Boxs</option>'
         +'</select>'
         +'</div>'
-        +'<div class="answers" ansnumber="1" number="'+i+'" id="answers'+i+'" hidden="true">'
-        +'<label >Enter Answer</label>'
-        +'<button type="button" title="add new Answer"class="btn btn-info btn-sm addnewAnswer float-xl-right">+</button>'
-        +'<button type="button" title="add new Answer"class="btn btn-danger btn-sm removeAnswer float-xl-right">-</button>'
-        +'<div class="form-group"id="Answer1Question'+i+'"deleted="no" >'
-        +'<div class="input-group" id ="Answer1">'
-        +'<input type="text" id="input1Q'+i+'" name="Answer1"class="form-control "  placeholder="Enter the option">'
-        +'<div class="btn input-group-addon btn-danger addonRemove disabled" >x</div>'
+        + '<div class="Answers" id="Answers' + i + '" hidden>'
+        + '<label >Enter the Answer/s</label>'
+        + '<button title="Add new Answer" class="btn btn-info btn-sm float-sm-right addnewAnswer" >+</button>'
+        + '<button title="Remove the last Answer" class="btn btn-danger btn-sm float-sm-right removeLastAnswer">-</button>'
+        + '<div class="form-group"  id="Answer1Question' + i + '">'
+        + '<div class="input-group">'
+        + '<input type="text" id="A1Q' + i + '" name="Answer1Question' + i + '"  class="form-control" placeholder="Enter the option" required>'
+        + '<div class="btn input-group-addon btn-danger RemoveAnswer disabled" ans="1">x</div>'
         +'</div>'
         +'</div>'
         +'</div>'
+        + '<input type="hidden" id="Answers' + i + 'Count" name="Answers' + i + 'Count" value="1">'
         +'<div class="form-check">'
         +'<label class="form-check-label">'
-        +'<input type="checkbox" name="Question'+i+'-requirement"class="form-check-input">Required'
+        + '<input type="hidden" id="Question' + i + '-requirement" name="Question' + i + '-requirement" value="0">'
+        + '<input type="checkbox" id="cb' + i + '" tmp="Question' + i + '" class="form-check-input checkRequire">'
+        + 'Required'
         +'</label>'
         +'</div>'
-        +'</div>'
         +'<hr>'
-        +'</div>';
+        + '</div>'
+
+        ;
 }
 
 $(document).on("click","select",function(){
-    if(this.value == 'MC' || this.value == 'MSQ'){
-        $('#answers'+$(this).attr('quesion')).attr('hidden',false  );
-        $('#input'+1+'Q'+$(this).attr('quesion')).prop('required',true);
+    var len = $(this).parent().parent().attr("id").length;
+    var questionNumber = $(this).parent().parent().attr("id").substring(8, len);
+    console.log($(this).parent().parent().attr("id") + " " + questionNumber);
+    if (this.value == 'CB' || this.value == 'MSQ') {
+        $('#Answers' + questionNumber).prop('hidden', false);
+        $('#Answer1Question' + questionNumber).prop('required', true);
     }else{
-        $('#answers'+$(this).attr('quesion')).attr('hidden',true );
+        $('#Answers' + questionNumber).prop('hidden', true);
+        $('#Answer1Question' + questionNumber).prop('required', false);
     }
 });
-$(document).on("click",".removeAnswer",function(){
-    var x =parseInt($(this).parent().attr("ansnumber"));
-    console.log("removing item");
-    if(x>1){
-        console.log(x);
-        var y='#Answer'+ x+'Question'+$(this).parent().attr("number");
-        console.log(y);
-        $(y).remove();
-        $(this).parent().attr("ansnumber",parseInt($(this).parent().attr("ansnumber"))-1);
-        console.log($(this).parent().attr("ansnumber"));
+
+
+$(document).on("click", ".removeLastAnswer", function () {
+    var tmp2 = $(this).parent().attr("id");
+    var questionNumber = parseInt(tmp2.substring(7, tmp2.length));
+    var lastAnswerNumber = parseInt($('#Answers' + questionNumber + 'Count').val());
+    if (lastAnswerNumber > 1) {
+        $('#Answers' + questionNumber + 'Count').val(lastAnswerNumber - 1);
+        $('#Answer' + lastAnswerNumber + 'Question' + questionNumber).remove();
     }
-    console.log("remove out");
+    return false;
 });
+
 $(document).on("click",".addnewAnswer",function(){
-    console.log("Adding answer");
-    console.log($(this).parent().attr("ansnumber"));
-    $(this).parent().attr("ansnumber",parseInt($(this).parent().attr("ansnumber"))+1);
-    var y= answerString($(this).parent().attr("ansnumber"),$(this).parent().attr("number"));
-    console.log(y);
+    var tmp2 = $(this).parent().attr("id");
+    var questionNumber = parseInt(tmp2.substring(7, tmp2.length));
+    var lastAnswerNumber = parseInt($('#Answers' + questionNumber + 'Count').val());
+    $('#Answers' + questionNumber + 'Count').val(lastAnswerNumber + 1);
+    var y = answerString(lastAnswerNumber + 1, questionNumber);
     $(this).parent().append(y);
-    console.log("adding out");
+    return false;
 });
-$(document).on("click","#addnewQuestion",function(){
-    console.log("adding Question");
-    console.log($("#Questions").attr("number"));
-    $("#Questions").attr("number",parseInt($("#Questions").attr("number"))+1);
-    console.log($("#Questions").attr("number"));
-    var y=questionString($("#Questions").attr("number"));
-    console.log(y);
-    $("#Questions").append(y);
-    console.log("adding out ");
-});
-$(document).on("click","#removeQuestion",function(){
-    var x=parseInt($("#Questions").attr("number"));
-    console.log(x);
-    if(x>1  ){
-        var y="#Question"+x;
-        console.log(y);
-        $(y).remove();
-        $("#Questions").attr("number",x-1);
-    }
-    console.log($("#Questions").attr("number"));
-});
-$(document).on("click",".addonRemove",function(){
-    var x=$(this).parent().attr("id");
-    console.log(x);
 
-    if(x=== "Answer1"){
-        $(this).prop("required",true);
-        $(this).val('');
+$(document).on("click", "#addNewQuestion", function () {
+    $(QuestionCount).val(parseInt($(QuestionCount).val()) + 1);
+    $(Questions).append(questionString($(QuestionCount).val()));
+    return false;
+});
+$(document).on("click", "#removeLastQuestion", function () {
+    var questions = parseInt($(QuestionCount).val());
+    console.log(questions);
+    if (parseInt($(QuestionCount).val()) > 1) {
+        $('#Question' + questions).remove();
+        $(QuestionCount).val(questions - 1);
+    }
+    return false;
+});
+$(document).on("click", ".RemoveAnswer", function () {
+    var ansnumber = parseInt($(this).attr("ans"));
+    var tmp = ansnumber;
+    var tmp2 = $(this).parent().parent().parent().attr("id");
+    var questionNumber = parseInt(tmp2.substring(7, tmp2.length));
+    var lastAnswerNumber = parseInt($('#Answers' + questionNumber + 'Count').val());
+    if (ansnumber == 1) {
+        $(this).prev().prop("required", true);
+
     }else{
-
-        $(this).parent().parent().attr("deleted","yes");
-        $(this).prev().prop("required",false);
-        $(this).parent().parent().hide();
-
+        $('#Answers' + questionNumber + 'Count').val(lastAnswerNumber - 1);
+        $(this).parent().parent().remove();
+        for (var i = ansnumber; i < lastAnswerNumber; i++) {
+            $('#Answer' + (i + 1) + 'Question' + questionNumber).attr("id", 'Answer' + (i) + 'Question' + questionNumber);
+        }
     }
-})
+});
+$(document).on("click", ".checkRequire", function () {
+    if (parseInt($('#' + $(this).attr("tmp") + '-requirement').val()) == 0) {
+        $('#' + $(this).attr("tmp") + '-requirement').val(1);
+    } else {
+        $('#' + $(this).attr("tmp") + '-requirement').val(0)
+    }
+});
+$(document).on("click", ".removeQuestion", function () {
+    var numOfQuesions = parseInt($('#QuestionCount').val());
+    $('#QuestionCount').val(numOfQuesions - 1);
+    var parentID = $(this).parent().parent().attr("id");
+    console.log(numOfQuesions + "  " + parentID + " ");
+    var questionNumber = parseInt(parentID.substring(8, parentID.length));
+
+    $(this).parent().parent().remove();
+    for (var i = questionNumber; i < numOfQuesions; i++) {
+        changeQuestionID(i);
+    }
+});
+
+function changeQuestionID(i) {
+    var lastAnswerNumber = parseInt($("#Answers" + (i + 1) + "Count").val());
+    for (var j = 1; j <= lastAnswerNumber; j++) {
+        $('#Answer' + (j) + 'Question' + (i + 1)).attr("id", 'Answer' + (j) + 'Question' + (i));
+        $('#A' + j + 'Q' + (i + 1)).attr("name", 'Answer' + j + 'Question' + i);
+        $('#A' + j + 'Q' + (i + 1)).attr("id", 'A' + j + 'Q' + i);
+    }
+    $('#Question' + (i + 1)).attr("id", 'Question' + (i));
+    $('#lb1-' + (i + 1)).attr("for", 'Question' + i + '-text');
+    $('#lb1-' + (i + 1)).attr("id", 'lb1-' + (i));
+    $('#Question' + (i + 1) + '-text').attr("name", 'Question' + i + '-text');
+    $('#Question' + (i + 1) + '-text').attr("id", 'Question' + i + '-text');
+    $('#lb2-' + (i + 1)).attr("for", 'Question' + i + '-type');
+    $('#lb2-' + (i + 1)).attr("id", 'lb2-' + (i));
+    $('#Question' + (i + 1) + '-type').attr("name", 'Question' + i + '-type');
+    $('#Question' + (i + 1) + '-type').attr("id", 'Question' + i + '-type');
+    $('#Answers' + (i + 1)).attr("id", 'Answers' + (i));
+    $('#Answers' + (i + 1) + 'Count').attr("name", 'Answers' + i + 'Count');
+    $('#Answers' + (i + 1) + 'Count').attr("id", 'Answers' + i + 'Count');
+    $('#Question' + (i + 1) + '-requirement').attr('name', 'Question' + (i) + '-requirement');
+    $('#Question' + (i + 1) + '-requirement').attr('id', 'Question' + (i) + '-requirement');
+    $('#cb' + (i + 1)).attr('tmp', 'Question' + (i));
+    $('#cb' + (i + 1)).attr('id', 'cb' + (i));
+}
