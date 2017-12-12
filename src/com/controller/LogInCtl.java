@@ -36,7 +36,7 @@ public class LogInCtl extends HttpServlet {
         //get UserModel to validate the request
         UserModel userModel= new UserModel();
         //get User to hold the user object
-        User user = userModel.getUserByuserName(userName);
+        User user = userModel.getUserByUserName(userName);
         //get session object to add the logged-in user
         HttpSession session=request.getSession();
         if(user != null){

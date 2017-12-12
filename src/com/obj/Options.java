@@ -6,21 +6,26 @@
 package com.obj;
 
 public class Options {
-    private String ID;
+    private int ID;
     private String OptionText;
-    private String QuestionID;
+    private int QuestionID;
 
-    public Options(String ID, String optionText, String questionID) {
+    public Options(String optionText, int questionID) {
+        OptionText = optionText;
+        QuestionID = questionID;
+    }
+
+    public Options(int ID, String optionText, int questionID) {
         this.ID = ID;
         OptionText = optionText;
         QuestionID = questionID;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -32,11 +37,11 @@ public class Options {
         OptionText = optionText;
     }
 
-    public String getQuestionID() {
+    public int getQuestionID() {
         return QuestionID;
     }
 
-    public void setQuestionID(String questionID) {
+    public void setQuestionID(int questionID) {
         QuestionID = questionID;
     }
 

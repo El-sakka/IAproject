@@ -7,11 +7,16 @@ package com.obj;
 
 public class Answer {
 
-    private String ID;
+    private int ID;
     private String answerText;
-    private String questionID;
+    private int questionID;
 
-    public Answer(String ID, String answerText, String questionID) {
+    public Answer(String answerText, int questionID) {
+        this.answerText = answerText;
+        this.questionID = questionID;
+    }
+
+    public Answer(int ID, String answerText, int questionID) {
         this.ID = ID;
         this.answerText = answerText;
         this.questionID = questionID;
@@ -25,19 +30,19 @@ public class Answer {
         this.answerText = answerText;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
-    public String getQuestionID() {
+    public int getQuestionID() {
         return questionID;
     }
 
-    public void setQuestionID(String questionID) {
+    public void setQuestionID(int questionID) {
         this.questionID = questionID;
     }
 

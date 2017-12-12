@@ -6,12 +6,18 @@
 package com.obj;
 
 public class Form {
-    private String ID;
+    private int ID;
     private String Name;
     private String Suspended;
     private String userName;
 
-    public Form(String ID, String name,String suspended, String userName) {
+    public Form(String name, String suspended, String userName) {
+        Name = name;
+        Suspended = suspended;
+        this.userName = userName;
+    }
+
+    public Form(int ID, String name, String suspended, String userName) {
         this.ID = ID;
         Name = name;
         Suspended = suspended;
@@ -26,11 +32,11 @@ public class Form {
         Name = name;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
