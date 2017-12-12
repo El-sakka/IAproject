@@ -43,70 +43,75 @@
         </div>
     </div>
 </nav>
-<div class="container ">
-
+<div class="container">
     <div class="jumbotron">
-        <h1>Enter the questions</h1>
-        <form id="form" >
+        <h1>Enter the quesions</h1>
+        <form>
             <hr>
-            <div id="Questions" number="1">
-                <div id="Question1" >
-                    <div class=" container">
-                        <div class="form-group">
-                            <label for="Question1-text">Enter The Quesion</label>
-                            <input type="text" class="form-control" id="Question1-name" placeholder="Enter the Question" Required>
-                        </div>
-                        <div class="form-group" >
-                            <label for="Quesion1-type">Select Type</label>
-                            <select class="form-control" id="Question1-type" quesion="1" name="Question-type"required>
-                                <option value="" disabled selected>Select your option</option>
-                                <option value="MSQ">MCQ</option>
-                                <option value="ToF">True/False</option>
-                                <option value="ShortAnswer">Short Answer</option>
-                                <option value="MC">Multiple Choices</option>
-                            </select>
-                        </div>
-                        <div class="answers" ansnumber="1" number="1" id="answers1" hidden="true">
-                            <label >Enter Answer</label>
-                            <button type="button" title="add new Answer"class="btn btn-info btn-sm addnewAnswer float-sm  -right">+</button>
-                            <button type="button" title="add new Answer"class="btn btn-danger btn-sm removeAnswer float-sm-right">-</button>
-                            <div class="form-group" id="Answer1Question1" deleted="no" >
-                                <div class="input-group" id="Answer1">
-                                    <input type="text" id="input1Q1" name="Answer1"class="form-control "  placeholder="Enter the option">
-                                    <div class="btn input-group-addon btn-danger addonRemove disabled"  >x</div>
-                                </div>
-
+            <div id="Questions">
+                <input type="hidden" id="QuestionCount" name="QuestionCount" value="1">
+                <div id="Question1" class="container">
+                    <div class="form-group">
+                        <label for="Question1-text" id="lb1-1">Enter the Question </label>
+                        <input type="text" class="form-control" name="Question1-text" id="Question1-text"
+                               placeholder="Enter the Question" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Question1-type" id="lb2-1">Select Question Type</label>
+                        <select class="form-control" name="Question1-type" id="Question1-type" required>
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="MSQ">MCQ</option>
+                            <option value="ToF">True/False</option>
+                            <option value="SA">ShortAnswer</option>
+                            <option value="CB">Check Boxs</option>
+                        </select>
+                    </div>
+                    <div class="Answers" id="Answers1" hidden>
+                        <label>Enter the Answer/s</label>
+                        <button title="Add new Answer" class="btn btn-info btn-sm float-sm-right addnewAnswer">+
+                        </button>
+                        <button title="Remove the last Answer"
+                                class="btn btn-danger btn-sm float-sm-right removeLastAnswer">-
+                        </button>
+                        <div class="form-group" id="Answer1Question1">
+                            <div class="input-group">
+                                <input type="text" id="A1Q1" name="Answer1Question1" class="form-control"
+                                       placeholder="Enter the option">
+                                <div class="btn input-group-addon btn-danger RemoveAnswer disabled" ans="1">x</div>
                             </div>
                         </div>
+                    </div>
+                    <input type="hidden" id="Answers1Count" name="Answers1Count" value="1">
 
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" name="Question1-requirement"class="form-check-input">
-                                Required
-                            </label>
-
-                        </div>
-
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="hidden" id="Question1-requirement" name="Question1-requirement" value="0">
+                            <input type="checkbox" id="cb1" tmp="Question1" class="form-check-input checkRequire">
+                            Required
+                        </label>
                     </div>
                     <hr>
                 </div>
             </div>
-            <button type="button" title="add new Quesion"class="btn btn-primary float-sm-right  " id="addnewQuestion" name="addnewQuestion">+</button>
-            <button type="button" title="add new Quesion"class="btn btn-danger float-sm-right   " id="removeQuestion" name="removeQuestion">-</button>
-            <br>  <button type="submit" title="save" class="btn  btn-primary">Submit</button>
+            <button type="button" title="Add new Question" class="btn btn-primary float-sm-right" id="addNewQuestion">
+                +
+            </button>
+            <button type="button" title="Add new Question" class="btn btn-danger float-sm-right"
+                    id="removeLastQuestion">-
+            </button>
+            <input type="submit" value="Save" class="form-control btn btn-info" style="margin-top:1em;">
         </form>
     </div>
 </div>
-
 <nav class="navbar bg-faded fixed-bottom">
     <div class="container-fluid align-content-center">
-        Made By  <a class="align-self-center" target="_tab" href="http://zizo.esy.es/">ZizoNaser</a> &copy;2017
+        Made By <a class="align-self-center" target="_tab" href="http://zizo.esy.es/">ZizoNaser</a> &copy;2017
     </div>
-
 </nav>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/tether.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Submit-Form.js"></script>
 </body>

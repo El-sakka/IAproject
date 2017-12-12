@@ -29,11 +29,11 @@
         <url-pattern>/LogOutCtl</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>AddForm</servlet-name>
-        <servlet-class>com.controller.AddForm</servlet-class>
+        <servlet-name>AddFormCtl</servlet-name>
+        <servlet-class>com.controller.AddFormCtl</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AddForm</servlet-name>
-        <url-pattern>/AddForm</url-pattern>
+        <servlet-name>AddFormCtl</servlet-name>
+        <url-pattern>/AddFormCtl</url-pattern>
     </servlet-mapping>
 </web-app>
