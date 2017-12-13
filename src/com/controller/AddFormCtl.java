@@ -7,6 +7,7 @@ import com.model.UserModel;
 import com.obj.Form;
 import com.obj.Options;
 import com.obj.Question;
+import com.obj.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,36 +35,46 @@ public class AddFormCtl extends HttpServlet {
         //get the session from the request
         HttpSession session = request.getSession();
         //get the loggedInUser
-//        User LoggedInUser = (User) session.getAttribute("LoggedInUser");
+        User LoggedInUser = (User) session.getAttribute("LoggedInUser");
+        LoggedInUser = new User("zizo", "testt", "123", "ss", "admin");
         //If there is Logged in User
-        // LoggedInUser != null
-        if (true) {
-            //Add new Form for the USer
-            form = formModel.addForm(FormName, "no", "testt");
-            //Loop on All Questions
-            for (int i = 1; i <= QuestionCount; i++) {
-                QuestionText = request.getParameter("Question" + i + "-text");
-                QuestionType = request.getParameter("Question" + i + "-type");
-                QuestionRequirement = request.getParameter("Question" + i + "-requirement");
-                question = questionModel.addQuestion(QuestionText, QuestionType, QuestionRequirement, form.getID());
-                System.out.println(QuestionText + "/n" + QuestionType);
-                if (QuestionType.equals("MCQ") || QuestionType.equals("CB")) {
-                    System.out.println("Got Here");
-                    AnswerCount = Integer.parseInt(request.getParameter("Answers" + i + "Count"));
-                    for (int j = 1; j <= AnswerCount; j++) {
-                        AnswerText = request.getParameter("Answer" + j + "Question" + i);
-                        option = optionModel.addOption(AnswerText, question.getID());
+        if (LoggedInUser != null) {
+            //If user isn't Suspended
+            if (LoggedInUser.getType() != "sus") {
+                //Add new Form for the USer
+                form = formModel.addForm(FormName, "no", LoggedInUser.getUserName());
+                //Loop on All Questions
+                for (int i = 1; i <= QuestionCount; i++) {
+                    //Get required data
+                    QuestionText = request.getParameter("Question" + i + "-text");
+                    QuestionType = request.getParameter("Question" + i + "-type");
+                    QuestionRequirement = request.getParameter("Question" + i + "-requirement");
+                    question = questionModel.addQuestion(QuestionText, QuestionType, QuestionRequirement, form.getID());
+                    if (QuestionType.equals("MCQ") || QuestionType.equals("CB")) {
+                        //Get Options Count
+                        AnswerCount = Integer.parseInt(request.getParameter("Answers" + i + "Count"));
+                        //Loop On All options add them to the dataBase Linked to the Question
+                        for (int j = 1; j <= AnswerCount; j++) {
+                            AnswerText = request.getParameter("Answer" + j + "Question" + i);
+                            option = optionModel.addOption(AnswerText, question.getID());
+                        }
+                    } else if (QuestionType.equalsIgnoreCase("ToF")) {
+                        optionModel.addOption("true", question.getID());
+                        optionModel.addOption("false", question.getID());
                     }
                 }
-
             }
+            //Redirect the client to the home page where the form is added
             response.sendRedirect("/index.jsp");
         } else {
+            //Redirect the client to the home page
             response.sendRedirect("/index.jsp");
         }
+        //That's All! Done!! Enjoy;)
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("/index.jsp");
+        //That's All! Done!! Enjoy;)
     }
 }

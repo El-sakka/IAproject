@@ -36,4 +36,29 @@
         <servlet-name>AddFormCtl</servlet-name>
         <url-pattern>/AddFormCtl</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SuspendFormCtl</servlet-name>
+        <servlet-class>com.controller.SuspendFormCtl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SuspendFormCtl</servlet-name>
+        <url-pattern>/SuspendFormCtl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CloseFormCtl</servlet-name>
+        <servlet-class>com.controller.CloseFormCtl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CloseFormCtl</servlet-name>
+        <url-pattern>/CloseFormCtl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ShowStatCtl</servlet-name>
+        <servlet-class>com.controller.ShowStatCtl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowStatCtl</servlet-name>
+        <url-pattern>/ShowStatCtl</url-pattern>
+    </servlet-mapping>
 </web-app>

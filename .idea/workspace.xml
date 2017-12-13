@@ -7,37 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04ce8578-0b52-4794-b997-058f071c616a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/controller/CloseFormCtl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/controller/ShowStatCtl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/controller/SuspendFormCtl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/controller/AddFormCtl.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/controller/AddFormCtl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/controller/LogInCtl.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/controller/LogInCtl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/AnswerModel.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/AnswerModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/FormModel.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/FormModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/OptionModel.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/OptionModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/QuestionModel.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/QuestionModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/UserModel.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/model/UserModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Answer.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Answer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Form.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Form.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Options.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Options.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Question.class" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/classes/com/obj/Question.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/controller/AddFormCtl.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/controller/AddFormCtl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/controller/LogInCtl.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/controller/LogInCtl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/model/AnswerModel.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/model/AnswerModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/model/FormModel.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/model/FormModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/model/OptionModel.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/model/OptionModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/model/QuestionModel.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/model/QuestionModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/model/UserModel.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/model/UserModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Answer.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Answer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Form.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Form.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Options.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Options.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Question.class" afterPath="$PROJECT_DIR$/out/production/IA-Project/com/obj/Question.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ea66a31c-35b2-4018-9bf4-14c626381fa1.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/ea66a31c-35b2-4018-9bf4-14c626381fa1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/add-form.jsp" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/add-form.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/js/Submit-Form.js" afterPath="$PROJECT_DIR$/out/artifacts/IA_Project_war_exploded/js/Submit-Form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/controller/AddFormCtl.java" afterPath="$PROJECT_DIR$/src/com/controller/AddFormCtl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/model/FormModel.java" afterPath="$PROJECT_DIR$/src/com/model/FormModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/model/OptionModel.java" afterPath="$PROJECT_DIR$/src/com/model/OptionModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/model/QuestionModel.java" afterPath="$PROJECT_DIR$/src/com/model/QuestionModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/obj/Question.java" afterPath="$PROJECT_DIR$/src/com/obj/Question.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/model/AnswerModel.java" afterPath="$PROJECT_DIR$/src/com/model/AnswerModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/add-form.jsp" afterPath="$PROJECT_DIR$/web/add-form.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/Submit-Form.js" afterPath="$PROJECT_DIR$/web/js/Submit-Form.js" />
     </list>
@@ -111,11 +96,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddFormCtl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/controller/AddFormCtl.java">
+      <file leaf-file-name="SuspendFormCtl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/controller/SuspendFormCtl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="49" column="96" lean-forward="false" selection-start-line="49" selection-start-column="96" selection-end-line="49" selection-end-column="96" />
+            <state relative-caret-position="684">
+              <caret line="53" column="36" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="53" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -124,8 +109,20 @@
       <file leaf-file-name="add-form.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/add-form.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="90" column="113" lean-forward="false" selection-start-line="90" selection-start-column="113" selection-end-line="90" selection-end-column="113" />
+            <state relative-caret-position="342">
+              <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddFormCtl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/controller/AddFormCtl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="58" column="89" lean-forward="true" selection-start-line="58" selection-start-column="89" selection-end-line="58" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -134,9 +131,102 @@
       <file leaf-file-name="Submit-Form.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/Submit-Form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="127" column="61" lean-forward="false" selection-start-line="127" selection-start-column="61" selection-end-line="127" selection-end-column="61" />
+            <state relative-caret-position="74">
+              <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CloseFormCtl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/controller/CloseFormCtl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowStatCtl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/controller/ShowStatCtl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnswerModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/model/AnswerModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="55" column="81" lean-forward="false" selection-start-line="55" selection-start-column="81" selection-end-line="55" selection-end-column="81" />
+              <folding>
+                <element signature="e#0#7066#0" expanded="true" />
+                <marker date="1513185516493" expanded="true" signature="791:908" ph="select answe... Answer" />
+                <marker date="1513185516493" expanded="true" signature="2142:2198" ph="select answe... Answers" />
+                <marker date="1513185516493" expanded="true" signature="2142:2210" ph="select answe... Answers" />
+                <marker date="1513185516493" expanded="true" signature="3350:3454" ph="INSERT INTO `Answer`... " />
+                <marker date="1513185516493" expanded="true" signature="4431:4483" ph="SELECT FROM Answers" />
+                <marker date="1513185516493" expanded="true" signature="5518:5562" ph="DELETE FROM " />
+                <marker date="1513185516493" expanded="true" signature="6400:6437" ph="SELECT max(I... Answers" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/model/QuestionModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <marker date="1513164276774" expanded="true" signature="643:754" ph="INSERT INTO `Question`... " />
+                <marker date="1513164276774" expanded="true" signature="643:777" ph="INSERT INTO `Question`... " />
+                <marker date="1513164276774" expanded="true" signature="643:813" ph="INSERT INTO `Question`... " />
+                <marker date="1513164276774" expanded="true" signature="1865:1925" ph="SELECT * FRO... Question" />
+                <marker date="1513164276774" expanded="true" signature="3041:3080" ph="SELECT FROM Question... " />
+                <marker date="1513164276774" expanded="true" signature="4195:4234" ph="DELETE FROM " />
+                <marker date="1513164276774" expanded="true" signature="5079:5117" ph="SELECT max(I... Question" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/model/FormModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1584">
+              <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1513124587244" expanded="true" signature="618:680" ph="INSERT INTO `Form`... " />
+                <marker date="1513124587244" expanded="true" signature="618:682" ph="INSERT INTO `Form`... " />
+                <marker date="1513124587244" expanded="true" signature="618:698" ph="INSERT INTO `Form`... " />
+                <marker date="1513124587244" expanded="true" signature="618:719" ph="INSERT INTO `Form`... " />
+                <marker date="1513124587244" expanded="true" signature="618:737" ph="INSERT INTO `Form`... " />
+                <marker date="1513124587244" expanded="true" signature="1712:1758" ph="SELECT * FRO... Form" />
+                <marker date="1513124587244" expanded="true" signature="2923:2978" ph="SELECT * FRO... Form" />
+                <marker date="1513124587244" expanded="true" signature="4125:4145" ph="SELECT * FRO... Form" />
+                <marker date="1513124587244" expanded="true" signature="4125:4146" ph="SELECT * FRO... Form" />
+                <marker date="1513124587244" expanded="true" signature="5304:5361" ph="UPDATE `Form... " />
+                <marker date="1513124587244" expanded="true" signature="5304:5362" ph="UPDATE `Form... " />
+                <marker date="1513124587244" expanded="true" signature="6238:6295" ph="UPDATE `Form... " />
+                <marker date="1513124587244" expanded="true" signature="7085:7125" ph="DELETE FROM " />
+                <marker date="1513124587244" expanded="true" signature="7962:7996" ph="SELECT max(I... Form" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,14 +275,12 @@
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/controller/LogOutCtl.java" />
         <option value="$PROJECT_DIR$/src/com/controller/AddForm.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/controller/SignUpCtl.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ea66a31c-35b2-4018-9bf4-14c626381fa1/console.sql" />
         <option value="$PROJECT_DIR$/src/com/obj/Answer.java" />
         <option value="$PROJECT_DIR$/src/com/obj/Form.java" />
         <option value="$PROJECT_DIR$/src/com/obj/Options.java" />
         <option value="$PROJECT_DIR$/src/com/obj/Report.java" />
-        <option value="$PROJECT_DIR$/src/com/model/AnswerModel.java" />
         <option value="$PROJECT_DIR$/src/com/model/ReportModel.java" />
         <option value="$PROJECT_DIR$/src/com/controller/LogInCtl.java" />
         <option value="$PROJECT_DIR$/src/com/model/UserModel.java" />
@@ -200,8 +288,13 @@
         <option value="$PROJECT_DIR$/src/com/model/FormModel.java" />
         <option value="$PROJECT_DIR$/src/com/obj/Question.java" />
         <option value="$PROJECT_DIR$/src/com/model/QuestionModel.java" />
+        <option value="$PROJECT_DIR$/src/com/controller/SuspendFormCtl.java" />
+        <option value="$PROJECT_DIR$/src/com/controller/CloseFormCtl.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/model/AnswerModel.java" />
         <option value="$PROJECT_DIR$/web/add-form.jsp" />
         <option value="$PROJECT_DIR$/web/js/Submit-Form.js" />
+        <option value="$PROJECT_DIR$/src/com/controller/ShowStatCtl.java" />
         <option value="$PROJECT_DIR$/src/com/controller/AddFormCtl.java" />
       </list>
     </option>
@@ -279,13 +372,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IA-Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IA-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="obj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IA-Project" type="b2602c69:ProjectViewProjectNode" />
@@ -703,7 +789,7 @@
       <workItem from="1512816251448" duration="16659000" />
       <workItem from="1512903472103" duration="20402000" />
       <workItem from="1513066310139" duration="2402000" />
-      <workItem from="1513101114802" duration="20835000" />
+      <workItem from="1513101114802" duration="35429000" />
     </task>
     <task id="LOCAL-00001" summary="Editing FormView">
       <created>1512951400605</created>
@@ -733,11 +819,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513114383507</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding Required attribute to question table">
+      <created>1513164282738</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1513164282738</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61297000" />
+    <option name="totallyTimeSpent" value="75891000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -770,11 +863,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66558444" sideWeight="0.4967983" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4199134" sideWeight="0.49786553" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4199134" sideWeight="0.49786553" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.49626467" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15848452" sideWeight="0.49134198" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15688367" sideWeight="0.508658" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15848452" sideWeight="0.48701298" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15848452" sideWeight="0.512987" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11953042" sideWeight="0.51834863" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -856,14 +949,23 @@
     <MESSAGE value="Editing FormView" />
     <MESSAGE value="adding tether.min.js" />
     <MESSAGE value="adding Report Object" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding Report Object" />
+    <MESSAGE value="adding Required attribute to question table" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding Required attribute to question table" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/controller/ShowStatCtl.java</url>
+          <line>189</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -873,13 +975,13 @@
         <state relative-caret-position="774">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5677#0" expanded="true" />
+            <element signature="e#0#5676#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1513124180868" expanded="true" signature="722:825" ph="INSERT INTO `Options`... " />
-            <marker date="1513124180868" expanded="true" signature="1952:2054" ph="SELECT `ID`,... Options" />
-            <marker date="1513124180868" expanded="true" signature="3082:3111" ph="SELECT FROM Options... " />
-            <marker date="1513124180868" expanded="true" signature="4125:4154" ph="DELETE FROM " />
-            <marker date="1513124180868" expanded="true" signature="5011:5048" ph="SELECT max(I... Options" />
+            <marker date="1513164276750" expanded="true" signature="721:824" ph="INSERT INTO `Options`... " />
+            <marker date="1513164276750" expanded="true" signature="1951:2053" ph="SELECT `ID`,... Options" />
+            <marker date="1513164276750" expanded="true" signature="3081:3110" ph="SELECT FROM Options... " />
+            <marker date="1513164276750" expanded="true" signature="4124:4153" ph="DELETE FROM " />
+            <marker date="1513164276750" expanded="true" signature="5010:5047" ph="SELECT max(I... Options" />
           </folding>
         </state>
       </provider>
@@ -972,13 +1074,13 @@
         <state relative-caret-position="756">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5677#0" expanded="true" />
+            <element signature="e#0#5676#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1513124180868" expanded="true" signature="722:825" ph="INSERT INTO `Options`... " />
-            <marker date="1513124180868" expanded="true" signature="1952:2054" ph="SELECT `ID`,... Options" />
-            <marker date="1513124180868" expanded="true" signature="3082:3111" ph="SELECT FROM Options... " />
-            <marker date="1513124180868" expanded="true" signature="4125:4154" ph="DELETE FROM " />
-            <marker date="1513124180868" expanded="true" signature="5011:5048" ph="SELECT max(I... Options" />
+            <marker date="1513164276750" expanded="true" signature="721:824" ph="INSERT INTO `Options`... " />
+            <marker date="1513164276750" expanded="true" signature="1951:2053" ph="SELECT `ID`,... Options" />
+            <marker date="1513164276750" expanded="true" signature="3081:3110" ph="SELECT FROM Options... " />
+            <marker date="1513164276750" expanded="true" signature="4124:4153" ph="DELETE FROM " />
+            <marker date="1513164276750" expanded="true" signature="5010:5047" ph="SELECT max(I... Options" />
           </folding>
         </state>
       </provider>
@@ -1032,13 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1080,21 +1175,6 @@
             <element signature="e#0#1130#0" expanded="true" />
             <element signature="e#839#840#0" expanded="true" />
             <element signature="e#878#879#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/model/AnswerModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="150" column="5" lean-forward="false" selection-start-line="124" selection-start-column="3" selection-end-line="150" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#5785#0" expanded="true" />
-            <marker date="1513114000608" expanded="true" signature="791:906" ph="select answe... Answer" />
-            <marker date="1513114000608" expanded="true" signature="2070:2173" ph="INSERT INTO `Answer`... " />
-            <marker date="1513114000608" expanded="true" signature="3150:3202" ph="SELECT FROM Answers" />
-            <marker date="1513114000608" expanded="true" signature="4237:4281" ph="DELETE FROM " />
-            <marker date="1513114000608" expanded="true" signature="5119:5156" ph="SELECT max(I... Answers" />
           </folding>
         </state>
       </provider>
@@ -1221,9 +1301,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/model/OptionModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="85" lean-forward="false" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#5676#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <marker date="1513164276750" expanded="true" signature="721:824" ph="INSERT INTO `Options`... " />
+            <marker date="1513164276750" expanded="true" signature="1951:2053" ph="SELECT `ID`,... Options" />
+            <marker date="1513164276750" expanded="true" signature="3081:3110" ph="SELECT FROM Options... " />
+            <marker date="1513164276750" expanded="true" signature="4124:4153" ph="DELETE FROM " />
+            <marker date="1513164276750" expanded="true" signature="5010:5047" ph="SELECT max(I... Options" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/obj/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/model/FormModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
+        <state relative-caret-position="-1584">
           <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1245,71 +1354,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/model/OptionModel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/controller/CloseFormCtl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="85" lean-forward="false" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#5677#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1513124180868" expanded="true" signature="722:825" ph="INSERT INTO `Options`... " />
-            <marker date="1513124180868" expanded="true" signature="1952:2054" ph="SELECT `ID`,... Options" />
-            <marker date="1513124180868" expanded="true" signature="3082:3111" ph="SELECT FROM Options... " />
-            <marker date="1513124180868" expanded="true" signature="4125:4154" ph="DELETE FROM " />
-            <marker date="1513124180868" expanded="true" signature="5011:5048" ph="SELECT max(I... Options" />
-          </folding>
+        <state relative-caret-position="702">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/obj/Question.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="833">
+          <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/controller/SuspendFormCtl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="53" column="36" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="53" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/model/QuestionModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state relative-caret-position="72">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <marker date="1513163817573" expanded="true" signature="643:754" ph="INSERT INTO `Question`... " />
-            <marker date="1513163817573" expanded="true" signature="643:776" ph="INSERT INTO `Question`... " />
-            <marker date="1513163817573" expanded="true" signature="643:809" ph="INSERT INTO `Question`... " />
-            <marker date="1513163817573" expanded="true" signature="1860:1920" ph="SELECT * FRO... Question" />
-            <marker date="1513163817573" expanded="true" signature="3035:3074" ph="SELECT FROM Question... " />
-            <marker date="1513163817573" expanded="true" signature="4188:4227" ph="DELETE FROM " />
-            <marker date="1513163817573" expanded="true" signature="5072:5110" ph="SELECT max(I... Question" />
+            <marker date="1513164276774" expanded="true" signature="643:754" ph="INSERT INTO `Question`... " />
+            <marker date="1513164276774" expanded="true" signature="643:777" ph="INSERT INTO `Question`... " />
+            <marker date="1513164276774" expanded="true" signature="643:813" ph="INSERT INTO `Question`... " />
+            <marker date="1513164276774" expanded="true" signature="1865:1925" ph="SELECT * FRO... Question" />
+            <marker date="1513164276774" expanded="true" signature="3041:3080" ph="SELECT FROM Question... " />
+            <marker date="1513164276774" expanded="true" signature="4195:4234" ph="DELETE FROM " />
+            <marker date="1513164276774" expanded="true" signature="5079:5117" ph="SELECT max(I... Question" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/add-form.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/model/AnswerModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="90" column="113" lean-forward="false" selection-start-line="90" selection-start-column="113" selection-end-line="90" selection-end-column="113" />
-          <folding />
+        <state relative-caret-position="175">
+          <caret line="55" column="81" lean-forward="false" selection-start-line="55" selection-start-column="81" selection-end-line="55" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#7066#0" expanded="true" />
+            <marker date="1513185516493" expanded="true" signature="791:908" ph="select answe... Answer" />
+            <marker date="1513185516493" expanded="true" signature="2142:2198" ph="select answe... Answers" />
+            <marker date="1513185516493" expanded="true" signature="2142:2210" ph="select answe... Answers" />
+            <marker date="1513185516493" expanded="true" signature="3350:3454" ph="INSERT INTO `Answer`... " />
+            <marker date="1513185516493" expanded="true" signature="4431:4483" ph="SELECT FROM Answers" />
+            <marker date="1513185516493" expanded="true" signature="5518:5562" ph="DELETE FROM " />
+            <marker date="1513185516493" expanded="true" signature="6400:6437" ph="SELECT max(I... Answers" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/Submit-Form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="127" column="61" lean-forward="false" selection-start-line="127" selection-start-column="61" selection-end-line="127" selection-end-column="61" />
+        <state relative-caret-position="74">
+          <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/controller/ShowStatCtl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/add-form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/controller/AddFormCtl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="49" column="96" lean-forward="false" selection-start-line="49" selection-start-column="96" selection-end-line="49" selection-end-column="96" />
+        <state relative-caret-position="288">
+          <caret line="58" column="89" lean-forward="true" selection-start-line="58" selection-start-column="89" selection-end-line="58" selection-end-column="89" />
           <folding />
         </state>
       </provider>

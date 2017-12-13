@@ -44,7 +44,7 @@
 </nav>
 <div class="container">
     <div class="jumbotron">
-        <form>
+        <form action="/AddFormCtl" method="post">
 
             <div class=" row ">
                 <div class=" container-fluid align-content-center">

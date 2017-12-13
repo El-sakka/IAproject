@@ -1,4 +1,11 @@
-function answerString( i,j){
+/*
+ * Made By  (c) ZizoNaser
+ *  12/13/17 1:06 PM
+ *  Twitter: @ZizoNaser
+ *  GitHub: github.com/ZizoNaser
+ */
+
+function answerString(i, j){
     return ' <div class="form-group"  id="Answer' + i + 'Question' + j + '">'
         + '<div class="input-group">'
         + '<input type="text" id="A' + i + 'Q' + j + '" name="Answer' + i + 'Question' + j + '"  class="form-control" placeholder="Enter the option" >'
@@ -12,13 +19,13 @@ function questionString(i) {
         +'<div class="form-group">'
         + '<label for="Question' + i + '-text"id="lb1-' + i + '">Enter the Question </label>'
         + '<div class="btn btn-danger btn-sm removeQuestion float-sm-right">X</div>'
-        + '<input type="text" class="form-control" name="Question' + i + '-text" id="Question' + i + '-text" placeholder="Enter the Question" >'
+        + '<input type="text" class="form-control" name="Question' + i + '-text" id="Question' + i + '-text" placeholder="Enter the Question" required>'
         +'</div>'
         + '<div class="form-group">'
         + '<label for="Question' + i + '-type" id="lb2-' + i + '" >Select Question Type</label>'
         + '<select class="form-control" name="Question' + i + '-type" id="Question' + i + '-type" required>'
         +'<option value="" disabled selected>Select your option</option>'
-        +'<option value="MSQ">MCQ</option>'
+        + '<option value="MCQ">MCQ</option>'
         +'<option value="ToF">True/False</option>'
         + '<option value="SA">ShortAnswer</option>'
         + '<option value="CB">Check Boxs</option>'
@@ -26,11 +33,11 @@ function questionString(i) {
         +'</div>'
         + '<div class="Answers" id="Answers' + i + '" hidden>'
         + '<label >Enter the Answer/s</label>'
-        + '<button title="Add new Answer" class="btn btn-info btn-sm float-sm-right addnewAnswer" >+</button>'
-        + '<button title="Remove the last Answer" class="btn btn-danger btn-sm float-sm-right removeLastAnswer">-</button>'
+        + '<div title="Add new Answer" class="btn btn-info btn-sm float-sm-right addnewAnswer" >+</div>'
+        + '<div title="Remove the last Answer" class="btn btn-danger btn-sm float-sm-right removeLastAnswer">-</div>'
         + '<div class="form-group"  id="Answer1Question' + i + '">'
         + '<div class="input-group">'
-        + '<input type="text" id="A1Q' + i + '" name="Answer1Question' + i + '"  class="form-control" placeholder="Enter the option" required>'
+        + '<input type="text" id="A1Q' + i + '" name="Answer1Question' + i + '"  class="form-control" placeholder="Enter the option" value="">'
         + '<div class="btn input-group-addon btn-danger RemoveAnswer disabled" ans="1">x</div>'
         +'</div>'
         +'</div>'
@@ -38,7 +45,7 @@ function questionString(i) {
         + '<input type="hidden" id="Answers' + i + 'Count" name="Answers' + i + 'Count" value="1">'
         +'<div class="form-check">'
         +'<label class="form-check-label">'
-        + '<input type="hidden" id="Question' + i + '-requirement" name="Question' + i + '-requirement" value="0">'
+        + '<input type="hidden" id="Question' + i + '-requirement" name="Question' + i + '-requirement" value="no">'
         + '<input type="checkbox" id="cb' + i + '" tmp="Question' + i + '" class="form-check-input checkRequire">'
         + 'Required'
         +'</label>'
@@ -53,13 +60,15 @@ $(document).on("click","select",function(){
     var len = $(this).parent().parent().attr("id").length;
     var questionNumber = $(this).parent().parent().attr("id").substring(8, len);
     console.log($(this).parent().parent().attr("id") + " " + questionNumber);
-    if (this.value == 'CB' || this.value == 'MSQ') {
+    if (this.value == 'CB' || this.value == 'MCQ') {
         $('#Answers' + questionNumber).prop('hidden', false);
         $('#Answer1Question' + questionNumber).prop('required', true);
     }else{
         $('#Answers' + questionNumber).prop('hidden', true);
         $('#Answer1Question' + questionNumber).prop('required', false);
     }
+    console.log($('#Answer1Question' + questionNumber).prop('required'));
+
 });
 
 
@@ -81,13 +90,13 @@ $(document).on("click",".addnewAnswer",function(){
     $('#Answers' + questionNumber + 'Count').val(lastAnswerNumber + 1);
     var y = answerString(lastAnswerNumber + 1, questionNumber);
     $(this).parent().append(y);
-    return false;
+
 });
 
 $(document).on("click", "#addNewQuestion", function () {
     $(QuestionCount).val(parseInt($(QuestionCount).val()) + 1);
     $(Questions).append(questionString($(QuestionCount).val()));
-    return false;
+
 });
 $(document).on("click", "#removeLastQuestion", function () {
     var questions = parseInt($(QuestionCount).val());
@@ -96,7 +105,7 @@ $(document).on("click", "#removeLastQuestion", function () {
         $('#Question' + questions).remove();
         $(QuestionCount).val(questions - 1);
     }
-    return false;
+
 });
 $(document).on("click", ".RemoveAnswer", function () {
     var ansnumber = parseInt($(this).attr("ans"));
@@ -116,10 +125,10 @@ $(document).on("click", ".RemoveAnswer", function () {
     }
 });
 $(document).on("click", ".checkRequire", function () {
-    if (parseInt($('#' + $(this).attr("tmp") + '-requirement').val()) == 0) {
-        $('#' + $(this).attr("tmp") + '-requirement').val(1);
+    if ($('#' + $(this).attr("tmp") + '-requirement').val() == "no") {
+        $('#' + $(this).attr("tmp") + '-requirement').val("yes");
     } else {
-        $('#' + $(this).attr("tmp") + '-requirement').val(0)
+        $('#' + $(this).attr("tmp") + '-requirement').val("no")
     }
 });
 $(document).on("click", ".removeQuestion", function () {
@@ -133,6 +142,9 @@ $(document).on("click", ".removeQuestion", function () {
     for (var i = questionNumber; i < numOfQuesions; i++) {
         changeQuestionID(i);
     }
+});
+$(document).on("click", "#submitter", function () {
+    return true;
 });
 
 function changeQuestionID(i) {

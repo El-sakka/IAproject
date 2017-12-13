@@ -25,7 +25,7 @@ public class AnswerModel {
             //Get the Database Connection
             conn=MySQLConnUtils.getMySQLConnection();
             //create sql query
-            String sql ="select answerText, count(*) as answerCount from Answer WHERE Answer.questionID='"+questionID+"' group by answerText";
+            String sql = "select answerText, count(*) as answerCount from Answers WHERE Answers.questionID='" + questionID + "' group by answerText";
             //create statement object to execute the query
             Statement stm = conn.createStatement();
             //execute the query and save the return to ResultSet
@@ -44,6 +44,34 @@ public class AnswerModel {
         //That's All! done!! Enjoy ;)
     }
 
+    public Vector<Pair<String, Integer>> getShortAnswersForQuestionID(int questionID) {
+        //Create Vector to contain the result which is every answer and its count
+        Vector<Pair<String, Integer>> _return = new Vector<Pair<String, Integer>>();
+        //Create Connection object
+        Connection conn = null;
+        try {
+            //Get the Database Connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //create sql query
+            String sql = "select answerText from Answers WHERE Answers.questionID=" + questionID;
+            //create statement object to execute the query
+            Statement stm = conn.createStatement();
+            //execute the query and save the return to ResultSet
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {//go to the next entry (if exists)
+                _return.add(new Pair<String, Integer>(rs.getString("answerText"), 0));
+            }
+            //Close the Connection
+            conn.close();
+        } catch (Exception e) {
+            //If There is exception print its text to the console
+            System.out.println(e.toString());
+        }
+        //returns the vector with the results
+        return _return;
+        //That's All! done!! Enjoy ;)
+    }
+
     public Answer addAnswer(String answerText, int questionID) {
         //Create connection object
         Connection conn =null;
@@ -53,7 +81,7 @@ public class AnswerModel {
             //get the connection to the databse
             conn=MySQLConnUtils.getMySQLConnection();
             //create sql query
-            String sql = "INSERT INTO `Answer` ( `answerText`, `questionID`) VALUES ( '" + answerText + "', '" + questionID + "')";
+            String sql = "INSERT INTO `Answers` ( `answerText`, `questionID`) VALUES ( '" + answerText + "', '" + questionID + "')";
             //create Statement to execute the query
             Statement stm=conn.createStatement();
             //execute the query
