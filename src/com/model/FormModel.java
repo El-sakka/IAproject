@@ -18,7 +18,7 @@ public class FormModel {
             //Get the Database Connection
             conn = MySQLConnUtils.getMySQLConnection();
             //Create the SQL Query
-            String sql = "INSERT INTO `Form` (, `name`, `suspended`, `userName`) VALUES ( '" + name + "', '" + suspended + "', '" + userName + "')";
+            String sql = "INSERT INTO `Form` ( `name`, `suspended`, `userName`) VALUES ( '" + name + "', '" + suspended + "', '" + userName + "')";
             //Create Statement to Execute the Query
             Statement stm = conn.createStatement();
             //Execute the Query

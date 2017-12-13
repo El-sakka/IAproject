@@ -130,81 +130,86 @@
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="13" name="formID">
+    <column id="38" parent="13" name="required">
       <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="13" name="formID">
+      <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="39" parent="13" name="FormHas">
+    <index id="40" parent="13" name="FormHas">
       <ColNames>formID</ColNames>
     </index>
-    <key id="40" parent="13" name="PRIMARY">
+    <key id="41" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="41" parent="13" name="FormHas">
+    <foreign-key id="42" parent="13" name="FormHas">
       <ColNames>formID</ColNames>
       <RefSchemaName>IAProject</RefSchemaName>
       <RefTableName>Form</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="42" parent="14" name="ID">
+    <column id="43" parent="14" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="43" parent="14" name="reportText">
+    <column id="44" parent="14" name="reportText">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="14" name="formId">
+    <column id="45" parent="14" name="formId">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="45" parent="14" name="FromReported">
+    <index id="46" parent="14" name="FromReported">
       <ColNames>formId</ColNames>
     </index>
-    <key id="46" parent="14" name="PRIMARY">
+    <key id="47" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="47" parent="14" name="FromReported">
+    <foreign-key id="48" parent="14" name="FromReported">
       <ColNames>formId</ColNames>
       <RefSchemaName>IAProject</RefSchemaName>
       <RefTableName>Form</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="48" parent="15" name="userName">
+    <column id="49" parent="15" name="userName">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="15" name="name">
+    <column id="50" parent="15" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="15" name="password">
+    <column id="51" parent="15" name="password">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="51" parent="15" name="email">
+    <column id="52" parent="15" name="email">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="52" parent="15" name="type">
+    <column id="53" parent="15" name="type">
       <Position>5</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="53" parent="15" name="PRIMARY">
+    <key id="54" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userName</ColNames>
       <Primary>1</Primary>

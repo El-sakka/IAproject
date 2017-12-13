@@ -10,19 +10,30 @@ public class Question {
     private int ID;
     private String questionText;
     private String questionType;
+    private String Required;
     private int formID;
 
-    public Question(String questionText, String questionType, int formID) {
-        this.questionText = questionText;
-        this.questionType = questionType;
-        this.formID = formID;
-    }
-
-    public Question(int ID, String questionText, String questionType, int formID) {
+    public Question(int ID, String questionText, String questionType, String required, int formID) {
         this.ID = ID;
         this.questionText = questionText;
         this.questionType = questionType;
+        Required = required;
         this.formID = formID;
+    }
+
+    public Question(String questionText, String questionType, String required, int formID) {
+        this.questionText = questionText;
+        this.questionType = questionType;
+        Required = required;
+        this.formID = formID;
+    }
+
+    public String getRequired() {
+        return Required;
+    }
+
+    public void setRequired(String required) {
+        Required = required;
     }
 
     public String getQuestionText() {
@@ -60,10 +71,11 @@ public class Question {
     @Override
     public String toString() {
         return "Question{" +
-                ", ID='" + ID + '\'' +
-                "questionText='" + questionText + '\'' +
+                "ID=" + ID +
+                ", questionText='" + questionText + '\'' +
                 ", questionType='" + questionType + '\'' +
-                ", formID='" + formID + '\'' +
+                ", Required='" + Required + '\'' +
+                ", formID=" + formID +
                 '}';
     }
 }

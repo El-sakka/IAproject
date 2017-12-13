@@ -45,8 +45,16 @@
 </nav>
 <div class="container">
     <div class="jumbotron">
-        <h1>Enter the quesions</h1>
-        <form>
+        <form action="/AddFormCtl" method="post">
+            <div class=" row ">
+                <div class=" container-fluid align-content-center">
+                    <label for="FromName" class="align-self-center" ><h1>Enter Form Name </h1></label>
+                    <input type="text" class="form-control align-self-center " name="FromName" id="FromName"
+                           placeholder="Enter the From name" required>
+                </div>
+            </div>
+            <hr>
+            <h1>Enter the quesions</h1>
             <hr>
             <div id="Questions">
                 <input type="hidden" id="QuestionCount" name="QuestionCount" value="1">
@@ -60,7 +68,7 @@
                         <label for="Question1-type" id="lb2-1">Select Question Type</label>
                         <select class="form-control" name="Question1-type" id="Question1-type" required>
                             <option value="" disabled selected>Select your option</option>
-                            <option value="MSQ">MCQ</option>
+                            <option value="MCQ">MCQ</option>
                             <option value="ToF">True/False</option>
                             <option value="SA">ShortAnswer</option>
                             <option value="CB">Check Boxs</option>

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.Vector;
 
 public class QuestionModel {
-    public Question addQuestion(int ID, String questionText, String questionType, int formID) {
+    public Question addQuestion(String questionText, String questionType, String required, int formID) {
         //Create connection object
         Connection conn=null;
         //Create return object with the newly created object
@@ -18,13 +18,13 @@ public class QuestionModel {
             //Get Database Connection
             conn= MySQLConnUtils.getMySQLConnection();
             //Create SQL Query
-            String sql = "INSERT INTO `Question` (`ID`, `questionText`, `questionType`, `formID`) VALUES ('" + ID + "', '" + questionText + "', '" + questionType + "', '" + formID + "')";
+            String sql = "INSERT INTO `Question` ( `questionText`, `questionType`,`required`,`formID`) VALUES ( '" + questionText + "', '" + questionType + "','" + required + "', '" + formID + "')";
             //Create Statement to Execute the Query
             Statement stm= conn.createStatement();
             //Execute the Query
             stm.executeUpdate(sql);
             //Assign the newly created object to the return object
-            question = new Question(getLastID(), questionText, questionType, formID);
+            question = new Question(getLastID(), questionText, questionType, required, formID);
             //Close database connection
             conn.close();
         }catch (Exception ex){
@@ -52,7 +52,7 @@ public class QuestionModel {
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {//Get Next Entry if Exists
                 //Pushing the result to the return vector
-                _return.add(new Question(rs.getInt("ID"), rs.getString("questionText"), rs.getString("questionType"), rs.getInt("formID")));
+                _return.add(new Question(rs.getInt("ID"), rs.getString("questionText"), rs.getString("questionType"), rs.getString("required"), rs.getInt("formID")));
             }
             //Close the DataBase Connection
             conn.close();
@@ -80,7 +80,7 @@ public class QuestionModel {
             ResultSet rs = stm.executeQuery(sql);
             if (rs.next()) {//Get Next if Exists
                 //Assign object to the return object'
-                question = new Question(rs.getInt("ID"), rs.getString("questionText"), rs.getString("questionType"), rs.getInt("formID"));
+                question = new Question(rs.getInt("ID"), rs.getString("questionText"), rs.getString("questionType"), rs.getString("required"), rs.getInt("formID"));
             }
             //Close database connection
             conn.close();

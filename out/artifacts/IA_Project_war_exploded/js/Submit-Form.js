@@ -12,7 +12,7 @@ function questionString(i) {
         +'<div class="form-group">'
         + '<label for="Question' + i + '-text"id="lb1-' + i + '">Enter the Question </label>'
         + '<div class="btn btn-danger btn-sm removeQuestion float-sm-right">X</div>'
-        + '<input type="text" class="form-control" name="Question' + i + '-text" id="Question' + i + '-text" placeholder="Enter the Question" required>'
+        + '<input type="text" class="form-control" name="Question' + i + '-text" id="Question' + i + '-text" placeholder="Enter the Question" >'
         +'</div>'
         + '<div class="form-group">'
         + '<label for="Question' + i + '-type" id="lb2-' + i + '" >Select Question Type</label>'

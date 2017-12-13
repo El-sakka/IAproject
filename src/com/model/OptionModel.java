@@ -16,7 +16,7 @@ import java.sql.Statement;
 import java.util.Vector;
 
 public class OptionModel {
-    public Options addOption(int ID, String optionText, int questionID) {
+    public Options addOption(String optionText, int questionID) {
         //Create Option Object to carry the Newly Created Option
         Options option = null;
         //Create Database Connection
@@ -25,7 +25,7 @@ public class OptionModel {
             //Get DataBase Connection
             conn = MySQLConnUtils.getMySQLConnection();
             //Create SQL Query
-            String sql = "INSERT INTO `Options` (`ID`, `optionText`, `questionID`) VALUES ('" + ID + "', '" + optionText + "', '" + questionID + "')";
+            String sql = "INSERT INTO `Options` (`optionText`, `questionID`) VALUES ( '" + optionText + "', '" + questionID + "')";
             //Create Statement to execute the statement
             Statement stm = conn.createStatement();
             //Execute the Query

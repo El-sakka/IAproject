@@ -1,11 +1,10 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: zizo
-  Date: 12/9/17
-  Time: 12:48 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+  ~ Made By  (c) ZizoNaser
+  ~  12/13/17 12:06 PM
+  ~  Twitter: @ZizoNaser
+  ~  GitHub: github.com/ZizoNaser
+  --%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,8 +44,17 @@
 </nav>
 <div class="container">
     <div class="jumbotron">
-        <h1>Enter the quesions</h1>
         <form>
+
+            <div class=" row ">
+                <div class=" container-fluid align-content-center">
+                    <label for="FromName" class="align-self-center"><h1>Enter Form Name </h1></label>
+                    <input type="text" class="form-control align-self-center " name="FromName" id="FromName"
+                           placeholder="Enter the From name" required>
+                </div>
+            </div>
+            <hr>
+            <h1>Enter the quesions</h1>
             <hr>
             <div id="Questions">
                 <input type="hidden" id="QuestionCount" name="QuestionCount" value="1">
@@ -60,7 +68,7 @@
                         <label for="Question1-type" id="lb2-1">Select Question Type</label>
                         <select class="form-control" name="Question1-type" id="Question1-type" required>
                             <option value="" disabled selected>Select your option</option>
-                            <option value="MSQ">MCQ</option>
+                            <option value="MCQ">MCQ</option>
                             <option value="ToF">True/False</option>
                             <option value="SA">ShortAnswer</option>
                             <option value="CB">Check Boxs</option>
@@ -68,15 +76,14 @@
                     </div>
                     <div class="Answers" id="Answers1" hidden>
                         <label>Enter the Answer/s</label>
-                        <button title="Add new Answer" class="btn btn-info btn-sm float-sm-right addnewAnswer">+
-                        </button>
-                        <button title="Remove the last Answer"
-                                class="btn btn-danger btn-sm float-sm-right removeLastAnswer">-
-                        </button>
+                        <div title="Add new Answer" class="btn btn-info btn-sm float-sm-right addnewAnswer">+</div>
+                        <div title="Remove the last Answer"
+                             class="btn btn-danger btn-sm float-sm-right removeLastAnswer">-
+                        </div>
                         <div class="form-group" id="Answer1Question1">
                             <div class="input-group">
                                 <input type="text" id="A1Q1" name="Answer1Question1" class="form-control"
-                                       placeholder="Enter the option">
+                                       placeholder="Enter the option" value="">
                                 <div class="btn input-group-addon btn-danger RemoveAnswer disabled" ans="1">x</div>
                             </div>
                         </div>
@@ -85,7 +92,7 @@
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="hidden" id="Question1-requirement" name="Question1-requirement" value="0">
+                            <input type="hidden" id="Question1-requirement" name="Question1-requirement" value="no">
                             <input type="checkbox" id="cb1" tmp="Question1" class="form-check-input checkRequire">
                             Required
                         </label>
@@ -93,13 +100,12 @@
                     <hr>
                 </div>
             </div>
-            <button type="button" title="Add new Question" class="btn btn-primary float-sm-right" id="addNewQuestion">
-                +
-            </button>
-            <button type="button" title="Add new Question" class="btn btn-danger float-sm-right"
-                    id="removeLastQuestion">-
-            </button>
-            <input type="submit" value="Save" class="form-control btn btn-info" style="margin-top:1em;">
+            <div type="button" title="Add new Question" class="btn btn-primary float-sm-right" id="addNewQuestion">+
+            </div>
+            <div type="button" title="Add new Question" class="btn btn-danger float-sm-right" id="removeLastQuestion">
+                -
+            </div>
+            <input type="submit" value="Save" class="form-control btn btn-info" style="margin-top:1em;" id="submitter"/>
         </form>
     </div>
 </div>
@@ -107,6 +113,7 @@
     <div class="container-fluid align-content-center">
         Made By <a class="align-self-center" target="_tab" href="http://zizo.esy.es/">ZizoNaser</a> &copy;2017
     </div>
+
 </nav>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
