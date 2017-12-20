@@ -8,20 +8,31 @@ package com.obj;
 public class Form {
     private int ID;
     private String Name;
+    private String Description;
     private String Suspended;
     private String userName;
 
-    public Form(String name, String suspended, String userName) {
+    public Form(int ID, String name, String description, String suspended, String userName) {
+        this.ID = ID;
         Name = name;
+        Description = description;
         Suspended = suspended;
         this.userName = userName;
     }
 
-    public Form(int ID, String name, String suspended, String userName) {
-        this.ID = ID;
+    public Form(String name, String description, String suspended, String userName) {
         Name = name;
+        Description = description;
         Suspended = suspended;
         this.userName = userName;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public String getName() {
@@ -55,9 +66,10 @@ public class Form {
     @Override
     public String toString() {
         return "Form{" +
-                ", ID='" + ID + '\'' +
-                "Name='" + Name + '\'' +
-                "Suspended='" + Suspended + '\'' +
+                "ID=" + ID +
+                ", Name='" + Name + '\'' +
+                ", Description='" + Description + '\'' +
+                ", Suspended='" + Suspended + '\'' +
                 ", userName='" + userName + '\'' +
                 '}';
     }

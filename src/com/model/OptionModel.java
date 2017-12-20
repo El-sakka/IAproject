@@ -124,6 +124,30 @@ public class OptionModel {
         //That's All! Done!! Enjoy ;)
     }
 
+    public int removeOptionByQuestionID(int questionID) {
+        //Create Connection object
+        Connection conn = null;
+        int affected = -1;
+        try {
+            //Get the DataBase Connectoin
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create the Query
+            String sql = "DELETE FROM Options WHERE questionID=" + questionID;
+            //Create Statement Object to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the Query
+            affected = stm.executeUpdate(sql);
+            //close The DataBase connection
+            conn.close();
+        } catch (Exception ex) {
+            //IF There's Exception print its text out
+            System.out.println(ex.toString());
+        }
+        return affected;
+        //That's All! Done!! Enjoy ;)
+    }
+
+
     private int getLastID() {
         //Create Connection object
         Connection conn = null;

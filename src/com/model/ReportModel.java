@@ -13,9 +13,10 @@ import com.utils.MySQLConnUtils;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Vector;
 
 public class ReportModel {
-    public Report addReport(int reportID, String reportText, int formId) {
+    public Report addReport(String reportText, String aNew, int formId, String userName) {
         //Create Connection Object
         Connection conn = null;
         //Create return object
@@ -24,13 +25,13 @@ public class ReportModel {
             //Get The DataBase connection
             conn = MySQLConnUtils.getMySQLConnection();
             //Create SQL Query
-            String sql = "INSERT INTO `Report` (`ID`, `reportText`, `formId`) VALUES ('" + reportID + "', '" + reportText + "', '" + formId + "')";
+            String sql = "INSERT INTO `Report` ( `reportText`,`new` ,`formId`,`userName`) VALUES ( '" + reportText + "', '" + aNew + "', '" + formId + "', '" + userName + "')";
             //Create Statement to Execute the Query
             Statement stm = conn.createStatement();
             //Execute the query
             stm.executeUpdate(sql);
             //Assign the newly Created object to the return object
-            report = new Report(getLastID(), reportText, formId);
+            report = new Report(getLastID(), aNew, reportText, userName, formId);
             //Close Connection
             conn.close();
         } catch (Exception ex) {
@@ -42,6 +43,28 @@ public class ReportModel {
         //That's All! done!! Enjoy ;)
     }
 
+    public Report MarkAsRead(int ID) {
+        //Create Connection Object
+        Connection conn = null;
+        try {
+            //Get the Database Connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create SQL Query
+            String sql = "UPDATE `Report` SET `new` = 'no' WHERE `Report`.`ID` = " + ID;
+            //Create Statement to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the Query
+            stm.executeUpdate(sql);
+            //Close the DataBase Connection
+            conn.close();
+        } catch (Exception e) {
+            //Print out the Exception Text IF any
+            System.out.println(e.toString());
+        }
+        //return the newly created object
+        return getReport(ID);
+        //That's All! Done!! Enjoy ;)
+    }
     public Report removeReport(int reportID) {
         //Create Connection Object
         Connection conn = null;
@@ -81,7 +104,7 @@ public class ReportModel {
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {
                 //Assign the result object to the return object
-                report = new Report(rs.getInt("ID"), rs.getString("reportText"), rs.getInt("formId"));
+                report = new Report(rs.getInt("ID"), rs.getString("reportText"), rs.getString("new"), rs.getString("userName"), rs.getInt("formId"));
             }
             //Close Connection
             conn.close();
@@ -91,6 +114,35 @@ public class ReportModel {
         }
         //return the result object
         return report;
+        //That's All! done!! Enjoy ;)
+    }
+
+    public Vector<Report> getAllReports() {
+        //Create Connection object
+        Connection conn = null;
+        //Create Return Vector
+        Vector<Report> _return = new Vector<Report>();
+        try {
+            //Get The DataBase connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create SQL Query
+            String sql = "SELECT * FROM  Report WHERE 1";
+            //Create Statement to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the query
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                //Add result to the return Vector
+                _return.add(new Report(rs.getInt("ID"), rs.getString("reportText"), rs.getString("new"), rs.getString("userName"), rs.getInt("formId")));
+            }
+            //Close Connection
+            conn.close();
+        } catch (Exception e) {
+            //IF there is Exception print it out
+            System.out.println(e.toString());
+        }
+        //return the result Vector
+        return _return;
         //That's All! done!! Enjoy ;)
     }
 
@@ -104,7 +156,7 @@ public class ReportModel {
             //get the DataBase Connection
             conn = MySQLConnUtils.getMySQLConnection();
             //Create Sql Query
-            String sql = "SELECT max(ID) as LastID From Options";
+            String sql = "SELECT max(ID) as LastID From Report";
             //Create Statement to Execute the Query
             Statement stm = conn.createStatement();
             //Create ResultSet to get the Result Entries

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.Vector;
 
 public class FormModel {
-    public Form addForm(String name, String suspended, String userName) {
+    public Form addForm(String name, String description, String suspended, String userName) {
         //Create the Connection Object
         Connection conn=null;
         //Create Form Object to carry the returned newly created Form
@@ -18,13 +18,13 @@ public class FormModel {
             //Get the Database Connection
             conn = MySQLConnUtils.getMySQLConnection();
             //Create the SQL Query
-            String sql = "INSERT INTO `Form` ( `name`, `suspended`, `userName`) VALUES ( '" + name + "', '" + suspended + "', '" + userName + "')";
+            String sql = "INSERT INTO `Form` ( `name`, `description`,`suspended`, `userName`) VALUES ( '" + name + "', '" + description + "', '" + suspended + "', '" + userName + "')";
             //Create Statement to Execute the Query
             Statement stm = conn.createStatement();
             //Execute the Query
             stm.executeUpdate(sql);
             //Assign the form to the newly created form
-            form = new Form(getLastID(), name, suspended, userName);
+            form = new Form(getLastID(), name, description, suspended, userName);
             //Close the Database Connection
             conn.close();
         }catch (Exception ex){
@@ -45,14 +45,14 @@ public class FormModel {
             //Get the DataBase Connection
             conn = MySQLConnUtils.getMySQLConnection();
             //Create Sql Query
-            String sql = "SELECT  FROM `Form` WHERE Form.ID='" + ID + "' ";
+            String sql = "SELECT * FROM Form WHERE Form.ID=" + ID;
             //Create Statement to Execute the Query
             Statement stm = conn.createStatement();
             //Create ResultSet Object to carry the results
             ResultSet rs = stm.executeQuery(sql);
             if (rs.next()) {//get the Next (if exists)
                 //Add Entry to the Return Vector
-                form = new Form(rs.getInt("ID"), rs.getString("name"), rs.getString("suspended"), rs.getString("userName"));
+                form = new Form(rs.getInt("ID"), rs.getString("name"), rs.getString("description"), rs.getString("suspended"), rs.getString("userName"));
             }
             //Close the Database Connection
             conn.close();
@@ -81,7 +81,7 @@ public class FormModel {
             ResultSet rs=stm.executeQuery(sql);
             while (rs.next()) {//get the Next (if exists)
                 //Add Entry to the Return Vector
-                _return.add(new Form(rs.getInt("ID"), rs.getString("name"), rs.getString("suspended"), rs.getString("userName")));
+                _return.add(new Form(rs.getInt("ID"), rs.getString("name"), rs.getString("description"), rs.getString("suspended"), rs.getString("userName")));
             }
             //Close the Database Connection
             conn.close();
@@ -110,7 +110,7 @@ public class FormModel {
             ResultSet rs=stm.executeQuery(sql);
             while (rs.next()) {//Get the next result (if any)
                 //Add Form to the Vector
-                _return.add(new Form(rs.getInt("ID"), rs.getString("name"), rs.getString("suspended"), rs.getString("userName")));
+                _return.add(new Form(rs.getInt("ID"), rs.getString("name"), rs.getString("description"), rs.getString("suspended"), rs.getString("userName")));
             }
             //close DataBase Connection
             conn.close();
@@ -174,6 +174,8 @@ public class FormModel {
     }
 
     public Form removeForm(int ID) {
+        QuestionModel questionModel = new QuestionModel();
+        questionModel.removeQuestionByFormID(ID);
         //Create the Connection
         Connection conn = null;
         try {
@@ -194,6 +196,35 @@ public class FormModel {
         //Checks if it done then return would be Null
         return getForm(ID);
         //That's All! Done!! Enjoy ;)
+    }
+
+    Vector<String> getFilledUsers(int FormId) {
+        //Create Connection object
+        Connection conn = null;
+        //Create Vector to be returned
+        Vector<String> _return = new Vector<String>();
+        try {
+            //get Database Connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create SQL Query
+            String sql = "SELECT DISTINCT userName FROM `Answers` WHERE formId =" + FormId;
+            //Create statement Object to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the Query
+            ResultSet rs = stm.executeQuery(sql);
+            //Loop on the results
+            while (rs.next()) {//get the next Result if any
+                _return.add(rs.getString("userName"));
+            }
+            //close Database Connection
+            conn.close();
+        } catch (Exception ex) {
+            //Print The Exception
+            System.out.println(ex.toString());
+        }
+
+        return _return;
+        //That's all! Done!! Enjoy ;)
     }
 
     private int getLastID() {
@@ -223,4 +254,5 @@ public class FormModel {
         return Id;
         //That's All! done!! Enjoy ;)
     }
+
 }

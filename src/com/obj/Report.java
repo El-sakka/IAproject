@@ -11,16 +11,22 @@ package com.obj;
 public class Report {
     private int ReportID;
     private String ReportText;
+    private String New;
+    private String userName;
     private int FormId;
 
-    public Report(String reportText, int formId) {
+    public Report(int reportID, String reportText, String aNew, String userName, int formId) {
+        ReportID = reportID;
         ReportText = reportText;
+        New = aNew;
+        this.userName = userName;
         FormId = formId;
     }
 
-    public Report(int reportID, String reportText, int formId) {
-        ReportID = reportID;
+    public Report(String reportText, String aNew, String userName, int formId) {
         ReportText = reportText;
+        New = aNew;
+        this.userName = userName;
         FormId = formId;
     }
 
@@ -48,13 +54,31 @@ public class Report {
         FormId = formId;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getNew() {
+
+        return New;
+    }
+
+    public void setNew(String aNew) {
+        New = aNew;
+    }
+
     @Override
     public String toString() {
         return "Report{" +
-                "ReportID='" + ReportID + '\'' +
+                "ReportID=" + ReportID +
                 ", ReportText='" + ReportText + '\'' +
-                ", FormId='" + FormId + '\'' +
+                ", New='" + New + '\'' +
+                ", userName='" + userName + '\'' +
+                ", FormId=" + FormId +
                 '}';
     }
-
 }

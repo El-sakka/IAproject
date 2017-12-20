@@ -11,6 +11,7 @@ import com.utils.MySQLConnUtils;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Vector;
 
 public class UserModel {
         public User addUser(String userName,String password,String type,String name,String email){
@@ -44,6 +45,27 @@ public class UserModel {
             //That's All! done!! Enjoy ;)
         }
 
+    public void ChangePassword(String userName, String password) {
+        //
+        //Create Connection Object
+        Connection conn = null;
+        try {
+            //get The DataBase connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create SQL Query
+            String sql = "UPDATE `User` SET `password` = '" + password + "' WHERE `User`.`userName` = '" + userName + "'";
+            //Create Statement to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the Query
+            stm.executeUpdate(sql);
+            //Close Connection
+            conn.close();
+        } catch (Exception ex) {
+            //Print the Exception's Text (if any)
+            System.out.println(ex.toString());
+        }
+    }
+
     public User getUserByUserName(String userName) {
         //Create Connection Object
             Connection conn = null;
@@ -73,6 +95,34 @@ public class UserModel {
         //That's All! done!! Enjoy ;)
         }
 
+    public Vector<User> getAll() {
+        //Create Connection Object
+        Connection conn = null;
+        //Create Return Object
+        Vector<User> users = new Vector<User>();
+        try {
+            //Get the Database connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create SQL Query
+            String sql = "SELECT * FROM `User` WHERE 1";
+            //Create Statement Object to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the Query and push results to the ResultSet object
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {//get the next (if any)
+                //Assign the result object to the return object
+                users.add(new User(rs.getString("name"), rs.getString("userName"), rs.getString("password"), rs.getString("email"), rs.getString("type")));
+            }
+            //Close the dataBase connection
+            conn.close();
+        } catch (Exception ex) {
+            //If There's any Exception print its text
+            System.out.println(ex.toString());
+        }
+        //return the result object
+        return users;
+        //That's All! done!! Enjoy ;)
+    }
         public  User getUserByEmail(String email){
             //Create Connection Object
             Connection conn = null;
@@ -148,7 +198,7 @@ public class UserModel {
         //That's All! Done!! Enjoy ;)
     }
 
-    public User UnSuspendUser(String userName) {
+    public User NormalizeUser(String userName) {
         //Create the Connection
         Connection conn = null;
         try {
@@ -171,10 +221,6 @@ public class UserModel {
         //That's All! Done!! Enjoy ;)
     }
 
-    public User UnAdministratingUser(String userName) {
-        return UnSuspendUser(userName);
-        //That's All! done!! Enjoy ;)
-    }
 
     public User RemoveUser(String userName) {
         //Create Connection Object

@@ -48,7 +48,7 @@ public class QuestionModel {
             String sql ="SELECT * FROM `Question` WHERE Question.formID ='"+formID+"'";
             //Create Statement object to Execute the Query
             Statement stm = conn.createStatement();
-            //Create Resultset to carry the result
+            //Create Result set to carry the result
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {//Get Next Entry if Exists
                 //Pushing the result to the return vector
@@ -62,6 +62,17 @@ public class QuestionModel {
         }
         //return the result vector
         return _return;
+    }
+
+    private void removeContainedAnsAndOp(int formID) {
+        Vector<Question> questions = getQuestionsByFormID(formID);
+        OptionModel optionModel = new OptionModel();
+        AnswerModel answerModel = new AnswerModel();
+        for (Question question : questions) {
+            optionModel.removeOptionByQuestionID(question.getID());
+            answerModel.removeAnswerByQuestionID(question.getID());
+        }
+
     }
 
     public Question getQuestion(int ID) {
@@ -118,6 +129,31 @@ public class QuestionModel {
         //That's All! Done!! Enjoy ;)
     }
 
+    public int removeQuestionByFormID(int formID) {
+        removeContainedAnsAndOp(formID);
+        //Create connection object
+        Connection conn = null;
+        int affected = -1;
+        //Create return object
+        Question question = null;
+        try {
+            //Get Database Connection
+            conn = MySQLConnUtils.getMySQLConnection();
+            //Create SQL Query
+            String sql = "DELETE FROM Question WHERE Question.formID=" + formID;
+            //Create Statement to Execute the Query
+            Statement stm = conn.createStatement();
+            //Execute the Query
+            affected = stm.executeUpdate(sql);
+            //Close database connection
+            conn.close();
+        } catch (Exception ex) {
+            //Print the Exception Text IF any
+            System.out.println(ex.toString());
+        }
+        return affected;
+        //That's All! Done!! Enjoy ;)
+    }
 
     private int getLastID() {
         //Create Connection object

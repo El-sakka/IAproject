@@ -1,10 +1,10 @@
-<%--
+<%@ page import="com.obj.User" %><%--
   ~ Made By  (c) ZizoNaser
   ~  12/13/17 12:06 PM
   ~  Twitter: @ZizoNaser
   ~  GitHub: github.com/ZizoNaser
   --%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,36 +12,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Submit A Form</title>
-
+    <title>Form</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon2.png" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Defaultcss -->
     <link rel="stylesheet" href="css/Defalut.css">
 </head>
 <body>
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top top-bar">
+<%
+    User LoggedInUser= (User) session.getAttribute("LoggedInUser");
+    if(session.isNew() ||LoggedInUser.getType().equalsIgnoreCase("sus")){
+    response.sendRedirect("index.jsp");
+    }
+%>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top top-bar" style="background-color:rgba(100,100 ,100 , 0.9);">
     <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Form <img src="img/icon2.png" /> </a>
+        <a class="navbar-brand" href="index.jsp">Form <img src="img/icon2.png" /> </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/index.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">about</a>
                 </li>
             </ul>
-            <button class="btn">
-                Login
-            </button>
+
+            <a href="/LogOutCtl" > <button class="btn btn-danger ">
+                LogOut
+            </button></a>
         </div>
     </div>
 </nav>
+
 <div class="container">
     <div class="jumbotron">
         <form action="/AddFormCtl" method="post">
@@ -109,9 +117,9 @@
         </form>
     </div>
 </div>
-<nav class="navbar bg-faded fixed-bottom">
+<nav class="navbar bg-faded opicitBack fixed-bottom">
     <div class="container-fluid align-content-center">
-        Made By <a class="align-self-center" target="_tab" href="http://zizo.esy.es/">ZizoNaser</a> &copy;2017
+        Made By <a class="align-self-center" target="_tab" href="#">3L Corpe</a> &copy;2017
     </div>
 
 </nav>

@@ -28,7 +28,7 @@ public class SignUpCtl extends HttpServlet {
         userName =request.getParameter("userName");
         password = MD5.md5( request.getParameter("password"));
         email= request.getParameter("email");
-        type="normal";
+        type = "norm";
         //get UserModel to check for userName and email & to add user to the database
         UserModel userModel= new UserModel();
         //get User object to add as logged-in user in the session

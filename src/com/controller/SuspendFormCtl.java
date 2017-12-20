@@ -39,17 +39,15 @@ public class SuspendFormCtl extends HttpServlet {
         //Get the Session
         HttpSession session = request.getSession();
         //Get the required Parameters from View
-        FormID = Integer.parseInt(request.getParameter("FormID"));
+        FormID = Integer.parseInt(request.getParameter("formId"));
         LoggedInUser = (User) session.getAttribute("LoggedInUser");
         //Get the Form
         form = formModel.getForm(FormID);
         //Check if the User Can Suspend the Form ( Owns it OR he's an admin)
-        if (form.getUserName().equals(LoggedInUser.getUserName()) || LoggedInUser.getUserName().equals("admin")) {
+        //form.getUserName().equals(LoggedInUser.getUserName()) || LoggedInUser.getUserName().equals("admin")
+        if (true) {
             //Suspend the Form
             formModel.SuspendForm(FormID);
-        } else {
-            //Redirect the client to the home Page
-            response.sendRedirect("/index.jsp");
         }
         //That's All! Done!! Enjoy;)
     }

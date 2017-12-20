@@ -8,8 +8,10 @@
 package com.controller;
 
 import com.model.AnswerModel;
+import com.model.FormModel;
 import com.model.OptionModel;
 import com.model.QuestionModel;
+import com.obj.Form;
 import com.obj.Options;
 import com.obj.Question;
 import com.utils.Pair;
@@ -37,26 +39,36 @@ public class ShowStatCtl extends HttpServlet {
         int formId;
         Question question;
         Options option;
+        Form form;
         //get the Models
         QuestionModel questionModel = new QuestionModel();
+        FormModel formModel = new FormModel();
         OptionModel optionModel = new OptionModel();
         //get formId From the View
         formId = Integer.parseInt(request.getParameter("formId"));
-        //Get Questions within the form
-        Vector<Question> questions = questionModel.getQuestionsByFormID(formId);
+        //
         out.print(getHtmlCodeStart());
-        for (int i = 0; i < questions.size(); i++) {
-            question = questions.elementAt(i);
-            if (question.getQuestionType().equalsIgnoreCase("Tof")) {
-                out.print(getHtmlCodeForTF(i + 1, question));
-            } else if (question.getQuestionType().equalsIgnoreCase("MCQ")) {
-                out.print(getHtmlCodeForMCQ(i + 1, question));
-            } else if (question.getQuestionType().equalsIgnoreCase("CB")) {
-                out.print(getHtmlCodeForCB(i + 1, question));
-            } else if (question.getQuestionType().equalsIgnoreCase("SA")) {
-                out.print(getHtmlCodeForSA(i + 1, question));
+        form = formModel.getForm(formId);
+        if (form != null) {
+            //Get Questions within the form
+            Vector<Question> questions = questionModel.getQuestionsByFormID(formId);
+
+            for (int i = 0; i < questions.size(); i++) {
+                question = questions.elementAt(i);
+                if (question.getQuestionType().equalsIgnoreCase("Tof")) {
+                    out.print(getHtmlCodeForTF(i + 1, question));
+                } else if (question.getQuestionType().equalsIgnoreCase("MCQ")) {
+                    out.print(getHtmlCodeForMCQ(i + 1, question));
+                } else if (question.getQuestionType().equalsIgnoreCase("CB")) {
+                    out.print(getHtmlCodeForCB(i + 1, question));
+                } else if (question.getQuestionType().equalsIgnoreCase("SA")) {
+                    out.print(getHtmlCodeForSA(i + 1, question));
+                }
             }
+        } else {
+            out.print("<h1> the Form doesn't Exist</h1>");
         }
+
         out.print(getHtmlCodeEnd());
 
     }
@@ -76,28 +88,29 @@ public class ShowStatCtl extends HttpServlet {
                 "    <link rel=\"stylesheet\" href=\"css/Defalut.css\">\n" +
                 "  </head>\n" +
                 "  <body>\n" +
-                "      <nav class=\"navbar navbar-toggleable-md navbar-light bg-faded fixed-top top-bar\">\n" +
-                "        <div class=\"container\">\n" +
-                "           <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+                "<nav class=\"navbar navbar-toggleable-md navbar-light bg-faded fixed-top top-bar\" style=\"background-color:rgba(100,100 ,100 , 0.9);\">\n" +
+                "    <div class=\"container\">\n" +
+                "        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
                 "            <span class=\"navbar-toggler-icon\"></span>\n" +
-                "          </button>\n" +
-                "          <a class=\"navbar-brand\" href=\"#\">Form <img src=\"img/icon2.png\" /> </a>\n" +
+                "        </button>\n" +
+                "        <a class=\"navbar-brand\" href=\"index.jsp\">Form <img src=\"img/icon2.png\" /> </a>\n" +
                 "\n" +
-                "          <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n" +
+                "        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n" +
                 "            <ul class=\"navbar-nav mr-auto\">\n" +
-                "              <li class=\"nav-item active\">\n" +
-                "                <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\n" +
-                "              </li>\n" +
-                "              <li class=\"nav-item\">\n" +
-                "                <a class=\"nav-link\" href=\"#\">about</a>\n" +
-                "              </li>\n" +
+                "                <li class=\"nav-item active\">\n" +
+                "                    <a class=\"nav-link\" href=\"/index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\n" +
+                "                </li>\n" +
+                "                <li class=\"nav-item\">\n" +
+                "                    <a class=\"nav-link\" href=\"#\">about</a>\n" +
+                "                </li>\n" +
                 "            </ul>\n" +
-                "              <button class=\"btn\">\n" +
-                "                Login\n" +
-                "              </button>\n" +
-                "          </div>\n" +
+                "\n" +
+                "            <a href=\"/LogOutCtl\" > <button class=\"btn btn-danger \">\n" +
+                "                LogOut\n" +
+                "            </button></a>\n" +
                 "        </div>\n" +
-                "      </nav>\n" +
+                "    </div>\n" +
+                "</nav>\n" +
                 "      <div class=\"container\">\n" +
                 "        <div class=\"jumbotron\">\n";
 
@@ -106,12 +119,12 @@ public class ShowStatCtl extends HttpServlet {
     private String getHtmlCodeEnd() {
         return "  </div>\n" +
                 "    </div>\n" +
-                "      <nav class=\"navbar bg-faded fixed-bottom\">\n" +
-                "        <div class=\"container-fluid align-content-center\">\n" +
-                "            Made By  <a class=\"align-self-center\" target=\"_tab\" href=\"http://zizo.esy.es/\">ZizoNaser</a> &copy;2017\n" +
-                "        </div>\n" +
+                "<nav class=\"navbar bg-faded opicitBack fixed-bottom\">\n" +
+                "    <div class=\"container-fluid align-content-center\">\n" +
+                "        Made By <a class=\"align-self-center\" target=\"_tab\" href=\"#\">3L Corpe</a> &copy;2017\n" +
+                "    </div>\n" +
                 "\n" +
-                "    </nav>\n" +
+                "</nav>" +
                 "    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n" +
                 "    <script src=\"js/jquery.min.js\"></script>\n" +
                 "    <!-- Include all compiled plugins (below), or include individual files as needed -->\n" +

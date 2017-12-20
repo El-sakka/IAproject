@@ -23,7 +23,7 @@ public class AddFormCtl extends HttpServlet {
         //Get Number of Questions
         int QuestionCount = Integer.parseInt(request.getParameter("QuestionCount")), AnswerCount;
         //Prepare Variables
-        String QuestionText, QuestionType, questionId, AnswerText, FormName = request.getParameter("FromName"), QuestionRequirement;
+        String QuestionText, QuestionType, questionId, AnswerText, formDescription, FormName = request.getParameter("FromName"), QuestionRequirement;
         Form form;
         Question question;
         Options option;
@@ -36,13 +36,13 @@ public class AddFormCtl extends HttpServlet {
         HttpSession session = request.getSession();
         //get the loggedInUser
         User LoggedInUser = (User) session.getAttribute("LoggedInUser");
-        LoggedInUser = new User("zizo", "testt", "123", "ss", "admin");
+
         //If there is Logged in User
         if (LoggedInUser != null) {
             //If user isn't Suspended
             if (LoggedInUser.getType() != "sus") {
                 //Add new Form for the USer
-                form = formModel.addForm(FormName, "no", LoggedInUser.getUserName());
+                form = formModel.addForm(FormName, "Some Desc", "no", LoggedInUser.getUserName());
                 //Loop on All Questions
                 for (int i = 1; i <= QuestionCount; i++) {
                     //Get required data

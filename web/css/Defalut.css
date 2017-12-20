@@ -1,6 +1,41 @@
 .top-bar{
   margin-bottom: 1em;
 }
+
+html, body {
+    height: 100%;
+    margin: 0px;
+}
 body{
-  padding-top: 5em; 
+    padding-top: 5em;
+
+    /*background-color: grey;*/
+    background: url("../img/bg4.jpg") fixed;
+    background-size: cover;
+}
+
+.opicitBack {
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+.footer {
+    height: 5%;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.circle {
+    display: block;
+    margin: auto;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
 }
